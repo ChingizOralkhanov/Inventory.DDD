@@ -9,6 +9,8 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Automapper\" />
+    <Folder Include="Products\Commands\" />
+    <Folder Include="Products\Queries\" />
   </ItemGroup>
 
 </Project>
