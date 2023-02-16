@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Inventory.Domain.Entities;
+using Inventory.Domain.Enums;
 
 namespace Inventory.Domain.Abstractions
 {
-    public interface IProductRepository
+    public interface IProductRepository : IRepository<Product>
     {
-        void Insert(WaitCallback callback);
+        public Task<int> GetProductCountAsync(ProductStatus productStatus, CancellationToken cancellationToken);
+        public Task SellProduct(Guid productId, CancellationToken cancellationToken);
     }
 }

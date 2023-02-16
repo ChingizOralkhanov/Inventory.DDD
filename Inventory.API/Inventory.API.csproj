@@ -9,8 +9,16 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Automapper\" />
-    <Folder Include="Products\Commands\" />
-    <Folder Include="Products\Queries\" />
+    <Folder Include="Products\Commands\Validators\" />
+    <Folder Include="Products\Queries\Validators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Inventory.Domain\Inventory.Domain.csproj" />
   </ItemGroup>
 
 </Project>
