@@ -4,7 +4,7 @@ using Inventory.Domain.Primitives;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Inventory.Infrastructure.DataAccess
+namespace Inventory.Infrastructure.DataAccess.Repositories
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
