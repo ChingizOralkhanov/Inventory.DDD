@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.API.Products.Queries.Validators
 {
-    public class GetProdyctsByStatusQueryValidator : AbstractValidator<GetProductsByStatusQuery>
+    public class GetProdyctsByStatusQueryValidator : AbstractValidator<GetProductsCountByStatusQuery>
     {
         public GetProdyctsByStatusQueryValidator()
         {

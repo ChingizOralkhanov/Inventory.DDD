@@ -28,7 +28,7 @@ namespace Inventory.Web.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ValidationProblemDetails))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> GetByStatus([FromQuery]GetProductsByStatusQuery query)
+        public async Task<IActionResult> GetByStatus([FromQuery]GetProductsCountByStatusQuery query)
         => Ok(await _mediator.Send(query));
 
         [HttpPost("updateProduct")]

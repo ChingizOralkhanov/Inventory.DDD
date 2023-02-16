@@ -1,7 +1,11 @@
-﻿using Inventory.Domain.Abstractions;
+﻿using Inventory.API.Products.Commands;
+using Inventory.API.Products.Queries;
+using Inventory.Domain.Abstractions;
+using Inventory.Domain.Entities;
 using Inventory.Domain.Exceptions;
 using Inventory.Infrastructure.DataAccess;
 using Inventory.Infrastructure.DataAccess.Repositories;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,5 +35,11 @@ namespace Inventory.Infrastructure.Extensions
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
         }
 
+        public static void ConfigureMediatR(this IServiceCollection services)
+        {
+            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IRequestHandler<GetProductsQuery, IEnumerable<Product>>, GetProductsQueryHandler>();
+            services.AddScoped<IRequestHandler<GetProductsCountByStatusQuery, int>, GetProductsCountByStatusQueryHandler>();
+        }
     }
 }
